@@ -5,7 +5,7 @@ import beersJSON from "./../assets/beers.json";
 
 function BeerDetailsPage() {
 
-  const APIURL = "https://ih-beers-api2.herokuapp.com/beers/";
+  const BeerAPIURL = "https://ih-beers-api2.herokuapp.com/beers/";
 
   // Mock initial state, to be replaced by data from the Beers API. Store the beer info retrieved from the Beers API in this state variable.
   const [beer, setBeer] = useState({});
@@ -24,7 +24,7 @@ function BeerDetailsPage() {
 
   const getBeer = async () => {
     try {
-      const response = await axios.get(APIURL + beerId);
+      const response = await axios.get(BeerAPIURL + beerId);
       if (response.status === 200){
         setBeer(response.data);
       }
