@@ -43,14 +43,14 @@ function AddBeerPage() {
       image_url: imageUrl,
       first_brewed: firstBrewed,
       brewers_tips: brewersTips,
-      attenuation_level: attenuationLevel,
+      attenuation_level: parseInt(attenuationLevel),
       contributed_by: contributedBy,
     }
 
     try {
       const response = await axios.post(BeerAPIURL + "/new", newBeer);
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         navigate("/beers");
       }
     } catch (error) {
